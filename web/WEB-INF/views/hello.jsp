@@ -4,8 +4,11 @@
 <html>
   <head>
     <title>$Title$</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" >
   </head>
   <body>
+    <h1>Authorization</h1>
+    <p>Hello world!</p>
   <a href="/list"><p>Хочешь узнать всех героев по имени ?)</p></a>
   </body>
 </html>
