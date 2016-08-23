@@ -6,6 +6,7 @@ import com.warrior.entity.Magician;
 import com.warrior.entity.Warrior;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,12 +32,13 @@ public class AppController {
 
     @RequestMapping("/")
     public String warrior(Model model) {
+        model.addAttribute("crypt", new BCryptPasswordEncoder().encode("user"));
 //        List<Warrior> lw = warriorDao.getAll();
 //        model.addAttribute("warrior", lw);
         return "hello";
     }
 
-    @RequestMapping("/list")
+    @RequestMapping("/auth/list")
     public String magician(Model model) {
         List<Warrior> lw = warriorDao.getAll();
         model.addAttribute("warrior", lw);

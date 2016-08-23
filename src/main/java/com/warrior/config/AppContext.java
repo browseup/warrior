@@ -1,7 +1,5 @@
 package com.warrior.config;
 
-
-
 import com.warrior.dao.MagicianDao;
 import com.warrior.dao.WarriorDao;
 import com.warrior.dao.impl.MagicianDaoImpl;
@@ -13,11 +11,12 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 
 @Configuration
 @PropertySource(value = {"classpath:util.properties"})
-//@PropertySource(value = {"classpath:auth.properties"})
+@PropertySource(value = {"classpath:auth.properties"})
 public class AppContext {
 
     @Autowired
@@ -33,8 +32,8 @@ public class AppContext {
         return new MagicianDaoImpl();
     }
 
-//    @Autowired
-//    HibernateConfig hibernateConfig;
+    @Autowired
+    HibernateConfig hibernateConfig;
 
     @Bean
     public JdbcTemplate jdbcTemplate() {
@@ -43,14 +42,14 @@ public class AppContext {
         return jdbcTemplate;
     }
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        JdbcDaoImpl jdbcImpl = new JdbcDaoImpl();
-//        jdbcImpl.setDataSource(hibernateConfig.dataSource());
-//        jdbcImpl.setUsersByUsernameQuery(environment.getRequiredProperty("usersByQuery"));
-//        jdbcImpl.setAuthoritiesByUsernameQuery(environment.getRequiredProperty("rolesByQuery"));
-//        return jdbcImpl;
-//    }
+    @Bean
+    public UserDetailsService userDetailsService() {
+        JdbcDaoImpl jdbcImpl = new JdbcDaoImpl();
+        jdbcImpl.setDataSource(hibernateConfig.dataSource());
+        jdbcImpl.setUsersByUsernameQuery(environment.getRequiredProperty("usersByQuery"));
+        jdbcImpl.setAuthoritiesByUsernameQuery(environment.getRequiredProperty("rolesByQuery"));
+        return jdbcImpl;
+    }
 
     @Bean
     public DriverManagerDataSource dataSource() {
