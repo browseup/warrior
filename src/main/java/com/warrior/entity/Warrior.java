@@ -1,10 +1,15 @@
 package com.warrior.entity;
 
+import javax.persistence.*;
+
 /**
  * Created by alexey_n on 22.08.2016.
  */
 
+@Entity
 public class Warrior {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private int age;

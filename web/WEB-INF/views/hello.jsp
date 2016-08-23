@@ -6,6 +6,6 @@
     <title>$Title$</title>
   </head>
   <body>
-fghs
+  <a href="/list"><p>Хочешь узнать всех героев по имени ?)</p></a>
   </body>
 </html>
