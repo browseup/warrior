@@ -2,9 +2,10 @@ package com.warrior.config;
 
 
 
+import com.warrior.dao.MagicianDao;
 import com.warrior.dao.WarriorDao;
+import com.warrior.dao.impl.MagicianDaoImpl;
 import com.warrior.dao.impl.WarriorDaoImpl;
-import com.warrior.entity.Warrior;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +13,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 
 
 @Configuration
@@ -27,6 +26,11 @@ public class AppContext {
     @Bean
     public WarriorDao warriorDao() {
         return new WarriorDaoImpl();
+    }
+
+    @Bean
+    public MagicianDao magicianDao() {
+        return new MagicianDaoImpl();
     }
 
 //    @Autowired

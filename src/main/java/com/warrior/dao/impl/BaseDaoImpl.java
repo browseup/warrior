@@ -1,7 +1,6 @@
 package com.warrior.dao.impl;
 
 import com.warrior.dao.BaseDao;
-import com.warrior.entity.Warrior;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -35,5 +34,5 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T>{
         return (List<T>) criteria.list();
     }
 
-    protected abstract Class<Warrior> getEntityName();
+    protected abstract Class<T> getEntityName();
 }

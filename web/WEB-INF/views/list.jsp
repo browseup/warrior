@@ -6,11 +6,18 @@
     <title>$Title$</title>
   </head>
   <body>
-<c:forEach items="${warrior}" var="warrior1">
-  <td>${warrior1.getId()} </td>
-  <td>${warrior1.getName()} </td>
-  <td>${warrior1.getAge()} </td>
-  <td>${warrior1.getDescription()} </td>
+<c:forEach items="${warrior}" var="warrior">
+  <td>${warrior.getId()} </td>
+  <td>${warrior.getName()} </td>
+  <td>${warrior.getAge()} </td>
+  <td>${warrior.getDescription()} </td>
+  </br>
+</c:forEach>
+<c:forEach items="${magician}" var="magician">
+  <td>${magician.getId()} </td>
+  <td>${magician.getName()} </td>
+  <td>${magician.getAge()} </td>
+  <td>${magician.getDescription()} </td>
   </br>
 </c:forEach>
   </body>
