@@ -1,13 +1,30 @@
 body {
-    background-color: #1b2bed;
+    margin: 0 auto;
+    padding: 0 auto;
+    background: #e2e0d4 url('../img/fon.jpg');
+
 }
 
-h1 {
-    color: #ffbdd4;
-    font: bold 20px Verdana;
+#main {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 1016px;
+    height: auto;
+    background-size: auto;
+}
+
+#header {
+    letter-spacing: 80px;
+    background-color: #b74340;
+    margin: 17px auto;
+    padding: 30px 0 30px 65px;
+    text-align: center;
+    color: #fffdf1;
+    font: bold 50px Verdana;
+    border: 3px solid #ffffff;
 }
 
 p {
-    color: #d2c6ca;
+    padding: 5px;
     font: 14px Verdana;
 }
