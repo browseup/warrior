@@ -1,4 +1,6 @@
 package com.warrior.dao;
 
-public interface UnitTypeDao {
+import com.warrior.entity.Unit;
+
+public interface UnitTypeDao<UnitType> extends BaseDao<UnitType>{
 }

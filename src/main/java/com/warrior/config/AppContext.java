@@ -1,9 +1,14 @@
 package com.warrior.config;
 
 import com.warrior.dao.MagicianDao;
+import com.warrior.dao.UnitDao;
+import com.warrior.dao.UnitTypeDao;
 import com.warrior.dao.WarriorDao;
 import com.warrior.dao.impl.MagicianDaoImpl;
+import com.warrior.dao.impl.UnitDaoImpl;
+import com.warrior.dao.impl.UnitTypeDaoImpl;
 import com.warrior.dao.impl.WarriorDaoImpl;
+import com.warrior.entity.Unit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +30,16 @@ public class AppContext {
     @Bean
     public WarriorDao warriorDao() {
         return new WarriorDaoImpl();
+    }
+
+    @Bean
+    public UnitDao unitDao() {
+        return new UnitDaoImpl();
+    }
+
+    @Bean
+    public UnitTypeDao unitTypeDao() {
+        return new UnitTypeDaoImpl();
     }
 
     @Bean

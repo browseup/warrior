@@ -1,4 +1,4 @@
 package com.warrior.dao;
 
-public interface UnitDao {
+public interface UnitDao<Unit> extends BaseDao<Unit> {
 }
