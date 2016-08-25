@@ -7,21 +7,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@SessionAttributes
+@SessionAttributes(types = Unit.class)
 public class AppController {
     @Autowired
     UnitDao unitDao;
 
     @Autowired
     SessionFactory sessionFactory;
+
+    @ModelAttribute("unitadd")
+    public Unit formBackingObject() {
+        return new Unit();
+    }
+
+    @ModelAttribute("unitadd1")
+    public Unit formBackingObject1() {
+        return new Unit();
+    }
 
 //    @RequestMapping("/")
 //    public String hello(Model model) {
@@ -37,11 +44,6 @@ public class AppController {
         return "hello";
     }
 
-    @ModelAttribute("unitadd")
-    public Unit formBackingObject() {
-        return new Unit();
-    }
-
     @RequestMapping("/unit")
     public String unit(Model model) {
         List<Unit> lu = unitDao.getAll();
@@ -50,7 +52,7 @@ public class AppController {
         return "unit";
     }
 
-    @RequestMapping(value = "/addunit", method = { RequestMethod.POST })
+    @RequestMapping(value = "/addunit", method = RequestMethod.POST)
     public String addUnit(@ModelAttribute("unitadd") Unit unit, Model model) {
 //    public String addUnit(Model model) {
 //        Unit unit = formBackingObject();
@@ -58,13 +60,13 @@ public class AppController {
         return "test";
     }
 
-//    @RequestMapping(value = "/addunit", method = { RequestMethod.POST })
-//    public String addUnit1(@ModelAttribute("unitadd") Unit unit, Model model) {
-////    public String addUnit(Model model) {
-////        Unit unit = formBackingObject();
-//        model.addAttribute("unitadd", unit.getName());
-//        return "test";
-//    }
+    @RequestMapping(value = "/addunit1", method = RequestMethod.GET)
+    public String addUnit1(@ModelAttribute("unitadd") Unit unit, Model model) {
+//    public String addUnit(Model model) {
+//        Unit unit = formBackingObject();
+        model.addAttribute("unitadd", unit.getName());
+        return "test";
+    }
 
 //    @RequestMapping("/auth/list")
 //    public String magician(Model model) {

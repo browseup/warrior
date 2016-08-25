@@ -19,7 +19,7 @@
 <%--<spring:form method="post" commandName="unitadd" action="/addunit">--%>
 <spring:form method="post" modelAttribute="unitadd" action="/addunit">
 
-    Name: <spring:input path="name" /><br/>
+    Name: <spring:input  path="name" /><br/>
     Age: <spring:input path="age"/><br/>
     <%--Type: <spring:input path="type"/> <br/>--%>
     <spring:button>Записать</spring:button>

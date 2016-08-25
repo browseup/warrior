@@ -42,12 +42,12 @@ public class AppContext {
     @Autowired
     HibernateConfig hibernateConfig;
 
-    @Bean
-    public JdbcTemplate jdbcTemplate() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.setDataSource(dataSource());
-        return jdbcTemplate;
-    }
+//    @Bean
+//    public JdbcTemplate jdbcTemplate() {
+//        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+//        jdbcTemplate.setDataSource(dataSource());
+//        return jdbcTemplate;
+//    }
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -58,13 +58,13 @@ public class AppContext {
         return jdbcImpl;
     }
 
-    @Bean
-    public DriverManagerDataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getProperty("jdbc.postgresql.driverClass"));
-        dataSource.setUrl(environment.getProperty("jdbc.postgresql.url"));
-        dataSource.setUsername(environment.getProperty("jdbc.postgresql.username"));
-        dataSource.setPassword(environment.getProperty("jdbc.postgresql.password"));
-        return dataSource;
-    }
+//    @Bean
+//    public DriverManagerDataSource dataSource() {
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName(environment.getProperty("jdbc.postgresql.driverClass"));
+//        dataSource.setUrl(environment.getProperty("jdbc.postgresql.url"));
+//        dataSource.setUsername(environment.getProperty("jdbc.postgresql.username"));
+//        dataSource.setPassword(environment.getProperty("jdbc.postgresql.password"));
+//        return dataSource;
+//    }
 }

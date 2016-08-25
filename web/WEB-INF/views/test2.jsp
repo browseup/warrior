@@ -7,9 +7,7 @@
     <title>Unit</title>
 </head>
 <body>
-${unitadd} <br/>
-${unitadd1}
-
+${age} <br/>
 
 </body>
 </html>
