@@ -16,9 +16,15 @@ public class Unit {
     @Column(name = "age")
     private int age;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "unittype_id")
-    private UnitType type;
+    private UnitType unitType;
+
+    @ManyToOne
+    @JoinColumn(name = "weapontype_id")
+    private WeaponType weaponType;
+
+
 
     public Unit() {
     }
@@ -47,11 +53,19 @@ public class Unit {
         this.age = age;
     }
 
-    public UnitType getType() {
-        return type;
+    public UnitType getUnitType() {
+        return unitType;
     }
 
-    public void setType(UnitType type) {
-        this.type = type;
+    public void setUnitType(UnitType type) {
+        this.unitType = type;
+    }
+
+    public WeaponType getWeaponType() {
+        return weaponType;
+    }
+
+    public void setWeaponType(WeaponType weapon_type) {
+        this.weaponType = weapon_type;
     }
 }

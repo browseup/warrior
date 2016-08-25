@@ -25,7 +25,5 @@
     <spring:button>Записать</spring:button>
 
 </spring:form>
-
-
 </body>
 </html>

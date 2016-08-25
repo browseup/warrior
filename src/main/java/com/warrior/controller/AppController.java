@@ -1,11 +1,7 @@
 package com.warrior.controller;
 
-import com.warrior.dao.MagicianDao;
 import com.warrior.dao.UnitDao;
-import com.warrior.dao.WarriorDao;
-import com.warrior.entity.Magician;
 import com.warrior.entity.Unit;
-import com.warrior.entity.Warrior;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,18 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @SessionAttributes
 public class AppController {
-    @Autowired
-    WarriorDao warriorDao;
-
-    @Autowired
-    MagicianDao magicianDao;
-
     @Autowired
     UnitDao unitDao;
 
@@ -61,7 +50,7 @@ public class AppController {
         return "unit";
     }
 
-    @RequestMapping(value = "/addunit", method = { RequestMethod.POST, RequestMethod.GET })
+    @RequestMapping(value = "/addunit", method = { RequestMethod.POST })
     public String addUnit(@ModelAttribute("unitadd") Unit unit, Model model) {
 //    public String addUnit(Model model) {
 //        Unit unit = formBackingObject();
@@ -77,14 +66,14 @@ public class AppController {
 //        return "test";
 //    }
 
-    @RequestMapping("/auth/list")
-    public String magician(Model model) {
-        List<Warrior> lw = warriorDao.getAll();
-        model.addAttribute("warrior", lw);
-        List<Magician> lm = magicianDao.getAll();
-        model.addAttribute("magician", lm);
-        return "list";
-    }
+//    @RequestMapping("/auth/list")
+//    public String magician(Model model) {
+//        List<Warrior> lw = warriorDao.getAll();
+//        model.addAttribute("warrior", lw);
+//        List<Magician> lm = magicianDao.getAll();
+//        model.addAttribute("magician", lm);
+//        return "list";
+//    }
 
 //    @RequestMapping("/")
 //    public String main(Model model) {

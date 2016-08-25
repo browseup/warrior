@@ -10,10 +10,10 @@ public class UnitType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String type;
+    private String unitType;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="type")
-    private List<Unit> listType;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy= "unitType")
+    private List<Unit> UnitList;
 
     public UnitType() {
     }
@@ -26,19 +26,19 @@ public class UnitType {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getUnitType() {
+        return unitType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setUnitType(String type) {
+        this.unitType = type;
     }
 
-    public List<Unit> getListType() {
-        return listType;
+    public List<Unit> getUnitList() {
+        return UnitList;
     }
 
-    public void setListType(List<Unit> listType) {
-        this.listType = listType;
+    public void setUnitList(List<Unit> listType) {
+        this.UnitList = listType;
     }
 }

@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class UserAuth {
+public class Authorization {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -14,7 +14,7 @@ public class UserAuth {
     private String password;
     private String role;
 
-    public UserAuth() {
+    public Authorization() {
     }
 
     public int getId() {
