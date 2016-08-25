@@ -11,7 +11,6 @@
     <td>${unit.getId()} </td>
     <td>${unit.getName()} </td>
     <td>${unit.getAge()} </td>
-    <td>${unit.getType().getType()} </td>
     </br>
 </c:forEach>
 
