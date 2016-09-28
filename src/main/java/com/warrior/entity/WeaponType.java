@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "weapontype")
+@Table(name = "weapon_type")
 public class WeaponType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

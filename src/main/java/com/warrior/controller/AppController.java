@@ -52,7 +52,7 @@ public class AppController {
         return "unit";
     }
 
-    @RequestMapping(value = "/addunit", method = RequestMethod.POST)
+    @RequestMapping(value = "/addunit", method = {RequestMethod.POST, RequestMethod.GET})
     public String addUnit(@ModelAttribute("unitadd") Unit unit, Model model) {
 //    public String addUnit(Model model) {
 //        Unit unit = formBackingObject();
@@ -60,7 +60,7 @@ public class AppController {
         return "test";
     }
 
-    @RequestMapping(value = "/addunit1", method = RequestMethod.GET)
+    @RequestMapping(value = "/addunit1", method = {RequestMethod.POST, RequestMethod.GET})
     public String addUnit1(@ModelAttribute("unitadd") Unit unit, Model model) {
 //    public String addUnit(Model model) {
 //        Unit unit = formBackingObject();

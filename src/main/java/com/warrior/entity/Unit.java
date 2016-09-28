@@ -17,14 +17,12 @@ public class Unit {
     private int age;
 
     @ManyToOne
-    @JoinColumn(name = "unittype_id")
+    @JoinColumn(name = "unit_type_id")
     private UnitType unitType;
 
     @ManyToOne
-    @JoinColumn(name = "weapontype_id")
+    @JoinColumn(name = "weapon_type_id")
     private WeaponType weaponType;
-
-
 
     public Unit() {
     }

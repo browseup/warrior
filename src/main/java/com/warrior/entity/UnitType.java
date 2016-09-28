@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "unittype")
+@Table(name = "unit_type")
 public class UnitType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,7 +13,7 @@ public class UnitType {
     private String unitType;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy= "unitType")
-    private List<Unit> UnitList;
+    private List<Unit> unitList;
 
     public UnitType() {
     }
@@ -35,10 +35,10 @@ public class UnitType {
     }
 
     public List<Unit> getUnitList() {
-        return UnitList;
+        return unitList;
     }
 
     public void setUnitList(List<Unit> listType) {
-        this.UnitList = listType;
+        this.unitList = listType;
     }
 }
